@@ -14,7 +14,8 @@ lab6-designa-nicho-4 created by GitHub Classroom
 - Software System: Centro meteorológico
 - Use Case: UC01 Detectar elementos meteorológicos
 - Actors: Cliente, Analizador
-- MSS: - El usuario ingresa a la aplicación.
+- MSS: 
+   - El usuario ingresa a la aplicación.
    - La aplicación solicita al usuario el texto a traducir.
    - El usuario ingresa el texto.
    - La aplicación muestra el texto traducido.
