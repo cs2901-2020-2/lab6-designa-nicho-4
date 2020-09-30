@@ -16,6 +16,7 @@ public class EstacionTest {
         generic(0);
     }
 
+    /*
     @Test(expectedExceptions = SequenceSizeException.class)
     public void testSequenceSize() throws IOException, Exception {
         generic(1);
@@ -31,6 +32,7 @@ public class EstacionTest {
         dnaSequencer.calculate(sequenceADN);
     }
 
+    */
     @Test(invocationCount = 50, threadPoolSize = 50)
     public void testTime() throws Exception {
         long startTime = System.currentTimeMillis();
