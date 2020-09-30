@@ -11,7 +11,9 @@ public class EstacionMetereologica{
     double temperatura;
     double viento;
 
-    public EstacionMetereologica(){}
+    public EstacionMetereologica(){
+        //Default constructor
+    }
 
     public double getHumedad() {
         return humedad;
@@ -26,24 +28,24 @@ public class EstacionMetereologica{
 
     public static class Cliente{
 
-        public double humedad;
-        public double temperatura;
-        public double viento;
-        public String username;
+        public static const double humedad;
+        public static const double temperatura;
+        public static const double viento;
+        public static const String username;
 
         final Logger logger = Logger.getLogger(Cliente.class.getName());
 
-        public Cliente(String _username) {
-            username  = _username;
+        public Cliente(String user) {
+            username  = user;
             logger.info("Starting analysis...");
         }
 
         public Cliente(){}
 
-        public void update(double _temperatura, double _humedad, double _viento){
-            temperatura = _temperatura;
-            humedad = _humedad;
-            viento = _viento;
+        public void update(double Temperatura, double Humedad, double Viento){
+            temperatura = Temperatura;
+            humedad = Humedad;
+            viento = Viento;
         }
 
     }
