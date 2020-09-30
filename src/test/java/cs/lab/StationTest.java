@@ -1,19 +1,22 @@
 package cs.lab;
-
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.TooManyListenersException;
 
 @Test
-public class EstacionTest {
-
-    public void testCase0() throws IOException, Exception {
-        generic(0);
+public class StationTest {
+    @Test
+    public void test_1() {
+        EstacionMetereologica.Cliente cliente1 = new EstacionMetereologica.Cliente();
+        cliente1.username = "marlon";
+        EstacionMetereologica.Cliente cliente2 = new EstacionMetereologica.Cliente();
+        cliente2.username = "Luis";
+        EstacionMetereologica clima = new EstacionMetereologica();
+        clima.addUser(cliente1);
+        clima.addUser(cliente2);
     }
 
     /*
@@ -32,7 +35,7 @@ public class EstacionTest {
         dnaSequencer.calculate(sequenceADN);
     }
 
-    */
+
     @Test(invocationCount = 50, threadPoolSize = 50)
     public void testTime() throws Exception {
         long startTime = System.currentTimeMillis();
@@ -41,13 +44,13 @@ public class EstacionTest {
         long time = endTime - startTime;
         Assert.assertTrue(time < 100);
     }
-
+*/
     private void generic(int i) throws IOException, Exception{
-        List<String> input = readInput(i);
+        /*List<String> input = readInput(i);
         String output = readOutput(i);
         EstacionMetereologica sequencer = new EstacionMetereologica();
         String response = sequencer.calculate(input);
-        Assert.assertEquals(response, output);
+        Assert.assertEquals(response, output);*/
     }
 
     private List<String> readInput(int testNumber){

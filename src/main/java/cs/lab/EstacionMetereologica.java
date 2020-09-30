@@ -59,14 +59,33 @@ public class EstacionMetereologica{
             i.update(temperatura, humedad, viento);
         }
     }
+    public boolean compare(){
+        return true;
+    }
 
     public static void main(String[] args) {
-        Cliente cliente = new Cliente();
-
-        cliente.username = "marlon";
-
+        Cliente cliente1 = new Cliente();
+        cliente1.username = "marlon";
+        Cliente cliente2 = new Cliente();
+        cliente2.username = "Luis";
         EstacionMetereologica clima = new EstacionMetereologica();
+        clima.addUser(cliente1);
+        clima.addUser(cliente2);
         clima.update(10, 23, 100);
+        for(Cliente Prueba1:clima.clientes){
+            logger.info(Prueba1.username);
+            logger.info(String.valueOf(Prueba1.temperatura));
+            logger.info(String.valueOf(Prueba1.humedad));
+            logger.info(String.valueOf(Prueba1.viento));
+        }
+        clima.update(15,20,260);
+        for(Cliente Prueba1:clima.clientes){
+            logger.info(Prueba1.username);
+            logger.info(String.valueOf(Prueba1.temperatura));
+            logger.info(String.valueOf(Prueba1.humedad));
+            logger.info(String.valueOf(Prueba1.viento));
+        }
+
 
     }
 
