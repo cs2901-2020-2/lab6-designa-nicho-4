@@ -10,13 +10,13 @@ import java.util.Scanner;
 public class StationTest {
     @Test
     public void test_1() {
-        EstacionMetereologica.Cliente cliente1 = new EstacionMetereologica.Cliente();
-        cliente1.username = "marlon";
-        EstacionMetereologica.Cliente cliente2 = new EstacionMetereologica.Cliente();
-        cliente2.username = "Luis";
+        EstacionMetereologica.Client client1 = new EstacionMetereologica.Client();
+        client1.username = "marlon";
+        EstacionMetereologica.Client client2 = new EstacionMetereologica.Client();
+        client2.username = "Luis";
         EstacionMetereologica clima = new EstacionMetereologica();
-        clima.addUser(cliente1);
-        clima.addUser(cliente2);
+        clima.addUser(client1);
+        clima.addUser(client2);
     }
 
     /*

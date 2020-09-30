@@ -5,59 +5,57 @@ import java.util.List;
 import java.util.logging.Logger;
 
 public class EstacionMetereologica{
-    static final Logger logger = Logger.getLogger(EstacionMetereologica.class.getName());
 
-    double humedad;
-    double temperatura;
-    double viento;
+    static final Logger logger = Logger.getLogger(EstacionMetereologica.class.getName());
 
     public EstacionMetereologica(){
         //Default constructor
     }
 
-    public double getHumedad() {
-        return humedad;
-    }
+    public static class Client {
 
-    public double getTemperatura() {
-        return temperatura;
-    }
-    public double getViento() {
-        return viento;
-    }
+        public static double humidity;
+        public static double temperature;
+        public static double wind;
+        public static String username;
 
-    public static class Cliente{
+        final Logger logger = Logger.getLogger(Client.class.getName());
 
-        public static const double humedad;
-        public static const double temperatura;
-        public static const double viento;
-        public static const String username;
-
-        final Logger logger = Logger.getLogger(Cliente.class.getName());
-
-        public Cliente(String user) {
+        public Client(String user) {
             username  = user;
             logger.info("Starting analysis...");
         }
 
-        public Cliente(){}
+        public Client(){}
 
         public void update(double Temperatura, double Humedad, double Viento){
-            temperatura = Temperatura;
-            humedad = Humedad;
-            viento = Viento;
+            temperature = Temperatura;
+            humidity = Humedad;
+            wind = Viento;
+        }
+
+        public double getHumedad() {
+            return humidity;
+        }
+
+        public double getTemperatura() {
+            return temperature;
+        }
+
+        public double getViento() {
+            return wind;
         }
 
     }
 
-    List<Cliente> clientes = new ArrayList<>();
+    List<Client> clients = new ArrayList<>();
 
-    public void addUser(Cliente cliente){
-        clientes.add(cliente);
+    public void addUser(Client client){
+        clients.add(client);
     }
 
     public void update(double temperatura, double humedad, double viento){
-        for(Cliente i: clientes){
+        for(Client i: clients){
             i.update(temperatura, humedad, viento);
         }
     }
@@ -66,26 +64,26 @@ public class EstacionMetereologica{
     }
 
     public static void main(String[] args) {
-        Cliente cliente1 = new Cliente();
-        cliente1.username = "marlon";
-        Cliente cliente2 = new Cliente();
-        cliente2.username = "Luis";
+        Client client1 = new Client();
+        client1.username = "marlon";
+        Client client2 = new Client();
+        client2.username = "Luis";
         EstacionMetereologica clima = new EstacionMetereologica();
-        clima.addUser(cliente1);
-        clima.addUser(cliente2);
+        clima.addUser(client1);
+        clima.addUser(client2);
         clima.update(10, 23, 100);
-        for(Cliente Prueba1:clima.clientes){
+        for(Client Prueba1:clima.clients){
             logger.info(Prueba1.username);
-            logger.info(String.valueOf(Prueba1.temperatura));
-            logger.info(String.valueOf(Prueba1.humedad));
-            logger.info(String.valueOf(Prueba1.viento));
+            logger.info(String.valueOf(Prueba1.temperature));
+            logger.info(String.valueOf(Prueba1.humidity));
+            logger.info(String.valueOf(Prueba1.wind));
         }
         clima.update(15,20,260);
-        for(Cliente Prueba1:clima.clientes){
+        for(Client Prueba1:clima.clients){
             logger.info(Prueba1.username);
-            logger.info(String.valueOf(Prueba1.temperatura));
-            logger.info(String.valueOf(Prueba1.humedad));
-            logger.info(String.valueOf(Prueba1.viento));
+            logger.info(String.valueOf(Prueba1.temperature));
+            logger.info(String.valueOf(Prueba1.humidity));
+            logger.info(String.valueOf(Prueba1.wind));
         }
 
 

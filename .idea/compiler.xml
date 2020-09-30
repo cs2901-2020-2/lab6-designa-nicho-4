@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="lab4" />
+        <module name="lab6-designa-nicho-4" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="lab4" target="1.8" />
+      <module name="lab6-designa-nicho-4" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
