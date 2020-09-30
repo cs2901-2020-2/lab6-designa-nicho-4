@@ -34,9 +34,7 @@ public class EstacionMetereologica{
 
     List<Cliente> clientes = new ArrayList<Cliente>();
 
-    public EstacionMetereologica(){
-
-    }
+    public EstacionMetereologica(){}
 
     public void addUser(Cliente cliente){
         clientes.add(cliente);
