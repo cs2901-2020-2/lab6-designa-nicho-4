@@ -45,7 +45,7 @@ public class EstacionTest {
     private void generic(int i) throws IOException, Exception{
         List<String> input = readInput(i);
         String output = readOutput(i);
-        DNASequencer sequencer = new DNASequencer();
+        EstacionMetereologica sequencer = new EstacionMetereologica();
         String response = sequencer.calculate(input);
         Assert.assertEquals(response, output);
     }
