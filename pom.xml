@@ -5,16 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cs2901</groupId>
-    <artifactId>lab4</artifactId>
+    <artifactId>lab6</artifactId>
     <version>0.1</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-<!--        <sonar.projectKey>cs2901-2020-2_lab4-requerimientos-funcionales-THEFLILUX</sonar.projectKey>-->
-<!--        <sonar.organization>cs2901-2020-2</sonar.organization>-->
-<!--        <sonar.host.url>https://sonarcloud.io</sonar.host.url>-->
-<!--        <sonar.login>534bf8518ca6c89b2c9f582863e6071c0c7cdead</sonar.login>-->
+        <sonar.projectKey>cs2901-2020-2_lab6-designa-nicho-4</sonar.projectKey>
+        <sonar.organization>cs2901-2020-2</sonar.organization>-->
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>-->
+        <sonar.login>0018c77a978d582ef5dbc51a7bddd87df2dfe47a</sonar.login>
     </properties>
 
     <dependencies>
@@ -45,7 +45,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.2</version>
+                <version>0.8.4</version>
                 <executions>
                     <execution>
                         <goals>
@@ -61,6 +61,11 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>         
+                <artifactId>maven-surefire-plugin</artifactId>           
+                <version>3.0.0-M1</version>
             </plugin>
         </plugins>
     </build>
