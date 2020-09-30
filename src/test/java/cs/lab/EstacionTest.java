@@ -10,7 +10,7 @@ import java.util.Scanner;
 import java.util.TooManyListenersException;
 
 @Test
-public class DNASequencerTest {
+public class EstacionTest {
 
     public void testCase0() throws IOException, Exception {
         generic(0);
