@@ -11,3 +11,7 @@ lab6-designa-nicho-4 created by GitHub Classroom
 - Debe ser posible el manejo de varias solicitudes.
 
 # Casos de uso
+- Software System: Centro meteorológico
+- Use Case: UC01 Detectar elementos meteorológicos
+- Actors: Cliente, Analizador
+- MSS:
