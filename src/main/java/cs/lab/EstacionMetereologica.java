@@ -14,10 +14,10 @@ public class EstacionMetereologica{
 
     public static class Client {
 
-        public static double humidity;
-        public static double temperature;
-        public static double wind;
-        public static String username;
+        double humidity;
+        double temperature;
+        double wind;
+        String username;
 
         final Logger logger = Logger.getLogger(Client.class.getName());
 
@@ -28,10 +28,10 @@ public class EstacionMetereologica{
 
         public Client(){}
 
-        public void update(double Temperatura, double Humedad, double Viento){
-            temperature = Temperatura;
-            humidity = Humedad;
-            wind = Viento;
+        public void update(double temperatura, double humedad, double viento){
+            temperature = temperatura;
+            humidity = humedad;
+            wind = viento;
         }
 
         public double getHumedad() {
@@ -64,29 +64,7 @@ public class EstacionMetereologica{
     }
 
     public static void main(String[] args) {
-        Client client1 = new Client();
-        client1.username = "marlon";
-        Client client2 = new Client();
-        client2.username = "Luis";
-        EstacionMetereologica clima = new EstacionMetereologica();
-        clima.addUser(client1);
-        clima.addUser(client2);
-        clima.update(10, 23, 100);
-        for(Client Prueba1:clima.clients){
-            logger.info(Prueba1.username);
-            logger.info(String.valueOf(Prueba1.temperature));
-            logger.info(String.valueOf(Prueba1.humidity));
-            logger.info(String.valueOf(Prueba1.wind));
-        }
-        clima.update(15,20,260);
-        for(Client Prueba1:clima.clients){
-            logger.info(Prueba1.username);
-            logger.info(String.valueOf(Prueba1.temperature));
-            logger.info(String.valueOf(Prueba1.humidity));
-            logger.info(String.valueOf(Prueba1.wind));
-        }
-
-
+        //Trying some tests
     }
 
 }
