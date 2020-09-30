@@ -6,7 +6,31 @@ import java.util.logging.Logger;
 
 public class EstacionMetereologica{
 
-    static final Logger logger = Logger.getLogger(Cliente.class.getName());
+    public class Cliente{
+
+        public double humedad;
+        public double temperatura;
+        public double viento;
+        public String username;
+    
+        final Logger logger = Logger.getLogger(Cliente.class.getName());
+    
+        public Cliente(String _username) {
+            username  = _username;
+            logger.info("Starting analysis...");
+        }
+    
+        public Cliente(){}
+        
+        public void update(double _temperatura, double _humedad, double _viento){
+            temperatura = _temperatura;
+            humedad = _humedad;
+            viento = _viento;
+        }
+    
+    }
+
+    static final Logger logger = Logger.getLogger(EstacionMetereologica.class.getName());
 
     List<Cliente> clientes = new ArrayList<Cliente>();
 
@@ -20,13 +44,17 @@ public class EstacionMetereologica{
 
     public void removeUser(Cliente user){
         for(int i = 0; i < clientes.size(); i++){
-            if(clientes[i].username == user.username){
+            if(clientes.get(i).username == user.username){
                 clientes.remove(i);
             }
         }
     }
 
     public void update(String filename){
+        
+    }
+
+    public static void main(String[] args) {
         
     }
 
