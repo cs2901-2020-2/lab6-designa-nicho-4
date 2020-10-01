@@ -7,7 +7,9 @@ import java.util.logging.Logger;
 public class EstacionMetereologica{
 
     static final Logger logger = Logger.getLogger(EstacionMetereologica.class.getName());
-
+    double humidity;
+    double temperature;
+    double wind;
     public EstacionMetereologica(){
         //Default constructor
     }
@@ -45,10 +47,14 @@ public class EstacionMetereologica{
         public double getViento() {
             return wind;
         }
-
     }
 
     List<Client> clients = new ArrayList<>();
+    public void mmm(double temperatura, double humedad, double viento){
+        temperature=temperatura;
+        humidity=humedad;
+        wind=viento;
+    }
 
     public void addUser(Client client){
         clients.add(client);
@@ -58,11 +64,16 @@ public class EstacionMetereologica{
         for(Client i: clients){
             i.update(temperatura, humedad, viento);
         }
+        mmm(temperatura,humedad,viento);
     }
-    public boolean compare(){
+    public boolean compare() {
+        for (Client i: clients) {
+            if (i.getHumedad() !=humidity || i.getTemperatura()!=temperature || i.getViento()!=wind ) {
+                return false;
+            }
+        }
         return true;
     }
-
     public static void main(String[] args) {
         //Trying some tests
     }
